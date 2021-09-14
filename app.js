@@ -5,16 +5,13 @@ const morgan = require("morgan");
 
 app.use(morgan("combined"));
 
-app.get("/doble/:number", (req, res) => {
-  res.send(`La respuesta es ${req.params.number * 2}!`);
+app.get("/", (req, res) => {
+  res.send(`HOLAAAAA`);
 });
 
-app.get("/mitad/:number", (req, res) => {
-  res.send(`La respuesta es ${req.params.number / 2}`);
-});
-
-app.get("/:nombre", (req, res) => {
-  res.send(`Hola ${req.params.nombre}!`);
+app.post("/", (req, res) => {
+  console.log(req.params.name);
+  res.send("ok");
 });
 
 app.listen(port, () => {
