@@ -1,6 +1,5 @@
 const express = require("express");
 const app = express();
-const port = 5000;
 const morgan = require("morgan");
 
 app.use(morgan("combined"));
@@ -14,6 +13,6 @@ app.post("/", (req, res) => {
   res.send("ok");
 });
 
-app.listen(port, () => {
-  console.log(`Example app listening at http://localhost:${port}`);
+app.listen(process.env.PORT || 5000, () => {
+  console.log(`Example app listening`);
 });
